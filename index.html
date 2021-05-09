@@ -170,10 +170,10 @@ x.addListener(myFunction) // Attach listener function on state changes
 
 function myFunction(x) {
   if (x.matches) { // If media query matches
-	//all is normal; run regular css + js
+	//leave vertical scroll in place for mobile
 
   } else {
-		$('#passage').css("padding-left","175px");
+		$('#passage').css("padding-left","150px");
 		
 		$('html, body').animate({
         scrollLeft: $("#passage").offset().left}, 1000);
