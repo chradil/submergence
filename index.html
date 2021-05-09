@@ -17,10 +17,14 @@ Submergence
 <div id="passage"></div>
 
 <tw-storydata name="Submergence" startnode="1" creator="Twine" creator-version="2.3.8" ifid="2D5417C5-4C2C-437B-8DD3-1AFD424AFF41" zoom="0.6" format="Paloma" format-version="1.1.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://use.fontawesome.com/releases/v5.15.3/css/all.css')
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap')
 
+
+
+  
 body,tw-story{
-	font-family:'Montserrat',sans-serif;
+	font-family: "Lato", sans-serif;
   	font-size:20px;
 
 }
@@ -35,13 +39,18 @@ p.final{
     font-style:bold;
   	font-size:30px;
   	text-shadow: 2px 2px 5px LightSkyBlue;
+  	cursor:pointer;
 }
 
 #ptitle{
 	display:none;
 }
 #storytitle{
-	font-family:'Montserrat',sans-serif;
+	
+font-family: "Montserrat", sans-serif;
+
+font-style: normal;
+
  	margin-right:20px;
   	color:gray;
 
@@ -81,7 +90,7 @@ body, #phistory {
   margin: 0;
   padding: 0.5em;
   border-right: 2px solid gray;
-  background-color: white;
+  background-color: #f5f5f5;
     color: black;
 }
 
@@ -97,11 +106,65 @@ i:hover{
 h5{
 	text-transform: uppercase
 }
+
+
+@media screen and (max-width: 600px){
+	body, #phistory {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+#phistory {
+    max-width:600px;
+}
+#passage, div.phistory {
+  	padding-top:200px;
+  	max-width:600px;
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 400px;
+    border-right: none;
+    border-bottom: 2px dotted gray;
+    border-top: none;
+    border-collapse: collapse;
+
+
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  margin: 0;
+  padding: 0.5em;
+  border-right: none;
+  border-bottom: 2px solid gray;
+  background-color: #f5f5f5;
+    color: black;
+}
+
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).on("showpassage:after", function() {
 	console.log("zoop");
+	
+let x = window.matchMedia("(max-width: 600px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
+	
 $('body').prepend('<div id="sidebar"><div style="text-align:center"><h2 id="storytitle">Sub/mergence</h2><h5>Going below the surface with Orca and Salmon<h5><br><br><i class="fa fa-chevron-left" id="goback"></i><i class="fa fa-chevron-right" id="goforward"></i></div></div>'); 
 	
-	$('html, body').animate({
+	
+});
+
+
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+	//all is normal; run regular css + js
+  } else {
+		$('html, body').animate({
         scrollLeft: $("#passage").offset().left}, 1000);
 	
 	$('#goback').click(function(){
@@ -114,14 +177,22 @@ $('body').prepend('<div id="sidebar"><div style="text-align:center"><h2 id="stor
 		$('html, body').animate({
         scrollLeft: '+=600'}, 1000);
 	});
-});
+  }
+}
+
+var x = window.matchMedia("(max-width: 700px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
 
 
-</script><tw-passagedata pid="1" name="0" tags="" position="142,121.33333333333333" size="100,100">&lt;script src=&quot;https://use.fontawesome.com/7f18b5668b.js&quot;&gt;&lt;/script&gt;
+</script><tw-passagedata pid="1" name="0" tags="" position="142,121" size="100,100">&lt;script src=&quot;https://use.fontawesome.com/7f18b5668b.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Lato&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt; 
 &lt;div style=&quot;text-align:right; padding-left:100px;&quot;&gt;
+
 &lt;figure&gt;&lt;img src=&#39;http://res.cloudinary.com/creatureconserve/image/upload/v1616472407/emergingFromNoisePollution_LoriBradley_mrd6rj.jpg&#39; width=&#39;300&#39; alt=&#39;emergingFromNoisePollution_LoriBradley_mrd6rj&#39;&gt;&lt;figcaption&gt;&quot;Emerging from Noise Pollution&quot;, Lori Bradley&lt;/figcaption&gt;&lt;/figure&gt;
 
-[[Submerge|1]]
+&lt;p class=&quot;final&quot;&gt;[[Submerge|1]]&lt;/p&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="1" tags="" position="277,132" size="100,100">&quot;In a world older and more complete than ours, they move finished and complete, gifted with the extension of the senses we have lost or never attained, living by voices we shall never hear. They are not brethren, they are not underlings: they are other nations, caught with ourselves in the net of life and time, fellow prisoners of the splendour and travail of the earth. &quot;
 ~Henry Beston
 
