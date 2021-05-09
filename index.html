@@ -108,7 +108,7 @@ h5{
 }
 
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 700px){
 	body, #phistory {
     width: auto;
     display: flex;
@@ -116,11 +116,11 @@ h5{
     flex-shrink: 0;
 }
 #phistory {
-    max-width:600px;
+    max-width:700px;
 }
 #passage, div.phistory {
   	padding-top:200px;
-  	max-width:600px;
+  	max-width:700px;
     flex-shrink: 0;
     flex-grow: 1;
     flex-basis: 400px;
@@ -150,7 +150,7 @@ h5{
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).on("showpassage:after", function() {
 	console.log("zoop");
 	
-let x = window.matchMedia("(max-width: 600px)")
+let x = window.matchMedia("(max-width: 700px)")
 myFunction(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
 	
