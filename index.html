@@ -109,10 +109,13 @@ h5{
 
 
 @media screen and (max-width: 700px){
-	body, #phistory {
-    width: auto;
+	body, #phistory, p {
+    max-width: 100%;
     display: block;
 }
+  	img { 
+	  max-width: 100%; 
+  }
 #phistory {
     max-width:500px;
 }
@@ -140,8 +143,9 @@ h5{
   background-color: #f5f5f5;
     color: black;
 }
-i{
+i, i:hover{
 	display:none;
+  	visibility:hidden;
 }
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$('head').append('<meta name="viewport" content="width=device-width, initial-scale=1.0" />');
