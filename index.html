@@ -147,7 +147,9 @@ h5{
 }
 
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).on("showpassage:after", function() {
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('head').append('<meta name="viewport" content="width=device-width, initial-scale=1.0" />');
+
+$(document).on("showpassage:after", function() {
 	console.log("zoop");
 	
 let x = window.matchMedia("(max-width: 700px)")
